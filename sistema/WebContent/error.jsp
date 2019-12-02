@@ -8,8 +8,7 @@
 </head>
 <body>
 	
-	<h1><a href="#">Ver Sensores</a></h1>
+	<h1><a href="/login.jsp">No autorizado</a></h1>
 	<br/><br/>
-	
 </body>
 </html>

@@ -18,9 +18,16 @@ public class Alarma implements Serializable {
 	private AlarmaPK id;
 
 	//bi-directional many-to-one association to Sensor
-	@ManyToOne
-	@JoinColumn(name="idSensor")
-	private Sensor sensor;
+	@Column(name="idSensor",insertable = false, updatable = false)
+	private int idSensor;
+
+	public int getIdSensor() {
+		return idSensor;
+	}
+
+	public void setIdSensor(int idSensor) {
+		this.idSensor = idSensor;
+	}
 
 	public Alarma() {
 	}
@@ -32,13 +39,4 @@ public class Alarma implements Serializable {
 	public void setId(AlarmaPK id) {
 		this.id = id;
 	}
-
-	public Sensor getSensor() {
-		return this.sensor;
-	}
-
-	public void setSensor(Sensor sensor) {
-		this.sensor = sensor;
-	}
-
 }

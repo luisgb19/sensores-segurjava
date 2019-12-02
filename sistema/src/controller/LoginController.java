@@ -20,9 +20,9 @@ public class LoginController {
 		Persona persona=sPersonas.getPersona(user, pwd);
 		if(persona!=null) {
 			sesion.setAttribute("persona", persona);
-			return "menu";
+			return "menu.jsp";
 		}else {
-			return "error";
+			return "error.jsp";
 		}
 	}
 }
