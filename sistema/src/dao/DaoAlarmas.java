@@ -13,6 +13,6 @@ public interface DaoAlarmas extends JpaRepository<Sensor,Integer>{
 
 	List<Alarma> findByIdSensor(int idSensor);
 	
-	@Query("select a From alarmas a where a.fecha>=?1 and a.fecha<=?2")
-	List<Alarma> findByFecha(Date fecIni, Date fecFin);
+//	@Query("select a From alarmas a where a.fecha>=?1 and a.fecha<=?2")
+//	List<Alarma> findByFecha(Date fecIni, Date fecFin);
 }

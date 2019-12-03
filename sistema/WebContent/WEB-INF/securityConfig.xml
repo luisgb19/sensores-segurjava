@@ -6,8 +6,8 @@
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 	<security:http use-expressions="false">
 		<!-- Mecanismo de autenticación -->
-		<!-- <security:http-basic/>-->
-		<security:form-login login-page="/login.jsp" authentication-failure-url="/error.jsp"/>
+		<security:http-basic/>
+		<!-- <security:form-login login-page="/login.jsp" authentication-failure-url="/error.jsp"/> -->
 		<!--  Protección de recursos /menu.jsp-->
 		<security:intercept-url pattern="/cliente*.jsp" access="ROLE_USER"/>
 		<security:intercept-url pattern="/admin*.jsp" access="ROLE_ADMIN"/>
