@@ -17,7 +17,7 @@
 <body>
 <div class="container">
 	<h1>Autenticación</h1>
-	<form action="menu" method="post">
+	<form action="toLogin" method="post">
 		<div class="form-group">
 			<label>Usuario:</label><input type="text" name="user" class="form-control" style="width:30%" placeholder="Usuario" autocomplete="name"/>
 		</div>

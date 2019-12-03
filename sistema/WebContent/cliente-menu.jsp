@@ -8,9 +8,8 @@
 </head>
 <body>
 	
-	<h1><a href="temas">Ver libros</a></h1>
+	<h1><a href="#">Ver Sensores</a></h1>
 	<br/><br/>
-	<h1><a href="ventas">Ventas</a></h1>
 	
 </body>
 </html>
