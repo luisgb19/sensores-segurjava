@@ -1,9 +1,20 @@
 package model;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 /**
@@ -20,17 +31,17 @@ public class Sensor implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idSensor;
 
-	private Object estado;
+	private boolean estado;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaAlta;
 
-	private Object modo;
+	private boolean modo;
 
 	private String ubicacion;
 
-	//bi-directional many-to-one association to Alarma
-	@OneToMany(mappedBy="sensor")
+	@OneToMany()
+	@JoinColumn(name="idSensor", referencedColumnName = "idSensor")
 	private List<Alarma> alarmas;
 
 	//bi-directional many-to-one association to Persona
@@ -49,11 +60,11 @@ public class Sensor implements Serializable {
 		this.idSensor = idSensor;
 	}
 
-	public Object getEstado() {
+	public boolean getEstado() {
 		return this.estado;
 	}
 
-	public void setEstado(Object estado) {
+	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
 
@@ -65,11 +76,11 @@ public class Sensor implements Serializable {
 		this.fechaAlta = fechaAlta;
 	}
 
-	public Object getModo() {
+	public boolean getModo() {
 		return this.modo;
 	}
 
-	public void setModo(Object modo) {
+	public void setModo(boolean modo) {
 		this.modo = modo;
 	}
 
@@ -87,20 +98,6 @@ public class Sensor implements Serializable {
 
 	public void setAlarmas(List<Alarma> alarmas) {
 		this.alarmas = alarmas;
-	}
-
-	public Alarma addAlarma(Alarma alarma) {
-		getAlarmas().add(alarma);
-		alarma.setSensor(this);
-
-		return alarma;
-	}
-
-	public Alarma removeAlarma(Alarma alarma) {
-		getAlarmas().remove(alarma);
-		alarma.setSensor(null);
-
-		return alarma;
 	}
 
 	public Persona getPersona() {

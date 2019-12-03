@@ -18,7 +18,7 @@ public class Persona implements Serializable {
 	@Id
 	private String dni;
 
-	private Object avisoPolicia;
+	private boolean avisoPolicia;
 
 	private String cuenta;
 
@@ -26,13 +26,13 @@ public class Persona implements Serializable {
 
 	private String email;
 
-	private byte habilitado;
+	private boolean habilitado;
 
 	private String nombre;
 
 	private String password;
 
-	private Object rolAdmin;
+	private String rol;
 
 	private String usuario;
 
@@ -51,11 +51,11 @@ public class Persona implements Serializable {
 		this.dni = dni;
 	}
 
-	public Object getAvisoPolicia() {
+	public boolean getAvisoPolicia() {
 		return this.avisoPolicia;
 	}
 
-	public void setAvisoPolicia(Object avisoPolicia) {
+	public void setAvisoPolicia(boolean avisoPolicia) {
 		this.avisoPolicia = avisoPolicia;
 	}
 
@@ -83,11 +83,11 @@ public class Persona implements Serializable {
 		this.email = email;
 	}
 
-	public byte getHabilitado() {
+	public boolean getHabilitado() {
 		return this.habilitado;
 	}
 
-	public void setHabilitado(byte habilitado) {
+	public void setHabilitado(boolean habilitado) {
 		this.habilitado = habilitado;
 	}
 
@@ -107,12 +107,12 @@ public class Persona implements Serializable {
 		this.password = password;
 	}
 
-	public Object getRolAdmin() {
-		return this.rolAdmin;
+	public String getRol() {
+		return this.rol;
 	}
 
-	public void setRolAdmin(Object rolAdmin) {
-		this.rolAdmin = rolAdmin;
+	public void setRol(String rol) {
+		this.rol = rol;
 	}
 
 	public String getUsuario() {
@@ -143,6 +143,21 @@ public class Persona implements Serializable {
 		sensore.setPersona(null);
 
 		return sensore;
+	}
+
+	public Persona(String dni, boolean avisoPolicia, String cuenta, String direccion, String email, boolean habilitado,
+			String nombre, String password, String rol, String usuario) {
+		super();
+		this.dni = dni;
+		this.avisoPolicia = avisoPolicia;
+		this.cuenta = cuenta;
+		this.direccion = direccion;
+		this.email = email;
+		this.habilitado = habilitado;
+		this.nombre = nombre;
+		this.password = password;
+		this.rol = rol;
+		this.usuario = usuario;
 	}
 
 }

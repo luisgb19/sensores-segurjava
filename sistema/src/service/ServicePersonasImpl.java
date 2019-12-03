@@ -5,7 +5,10 @@ import org.springframework.stereotype.Service;
 
 import dao.DaoPersonas;
 import model.Persona;
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/heads/spring-security
 @Service
 public class ServicePersonasImpl implements ServicePersonas {
 	@Autowired
