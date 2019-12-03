@@ -10,6 +10,6 @@ import model.Sensor;
 
 public interface DaoSensores extends JpaRepository<Persona,Integer>{
 
-//	@Query("select s From Sensores s where l.idCliente=?1 and l.estado=1")
-//	List<Sensor> findByIdCliente(String idCliente);
+	@Query("select s From Sensores s where s.idCliente=?1 and s.estado=1")
+	List<Sensor> findByIdCliente(String idCliente);
 }

@@ -6,11 +6,11 @@
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 	<security:http use-expressions="false">
 		<!-- Mecanismo de autenticación -->
-		<security:http-basic/>
+		<!-- <security:http-basic/>-->
 		<security:form-login login-page="/login.jsp" authentication-failure-url="/error.jsp"/>
 		<!--  Protección de recursos /menu.jsp-->
-		<security:intercept-url pattern="/menu.jsp" access="ROLE_USER"/>
-		<security:intercept-url pattern="/admin.jsp" access="ROLE_ADMIN"/>
+		<security:intercept-url pattern="/cliente*.jsp" access="ROLE_USER"/>
+		<security:intercept-url pattern="/admin*.jsp" access="ROLE_ADMIN"/>
 		
 		<security:csrf disabled="true"/>
 	</security:http>
@@ -20,21 +20,22 @@
 		<!-- Opción 1. Usuarios en el propio archivo user1	{noop}user1 md5 24c9e15e52afc47c225b757e7bee1f9d 
 		{noop}user2 user2 = 7e58d63b60197ceb55a1c487989a3720
 		-->
+<!--
 		<security:user-service>
-				<security:user name="usuario1" password="{noop}usuario1" authorities="ROLE_USER"/>
-				<security:user name="usuario2" password="{noop}usuario2" authorities="ROLE_USER"/>
-				<security:user name="usuario3" password="{noop}usuario3" authorities="ROLE_USER"/>
+				<security:user name="user1" password="{noop}user1" authorities="ROLE_USER"/>
+				<security:user name="user2" password="{noop}user2" authorities="ROLE_USER"/>
+				<security:user name="user3" password="{noop}user3" authorities="ROLE_USER"/>
 				<security:user name="admin" password="{noop}admin" authorities="ROLE_ADMIN"/>
 			</security:user-service>
-				
+				-->
 		<!-- Opción 2. Usuarios en archivo de tipo properties -->
 				<!-- <security:user-service properties="/WEB-INF/usuarios.properties"/>
 			 -->
 		<!-- Opción 3. Usuarios en una base de datos -->
-<!--					 <security:jdbc-user-service data-source-ref="dataServer"
+					 <security:jdbc-user-service data-source-ref="dataServer"
 						users-by-username-query="select usuario as user, password as pwd, habilitado as enabled from personas where usuario=?"
 						authorities-by-username-query="select usuario as user, rol as auth From personas where usuario=?"/>
-  	-->					
+  						
 		<!-- Opción 4. Usuarios en LDAP -->
 				<!-- <security:ldap-user-service server-ref="sldap"/>
 -->						
