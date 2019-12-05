@@ -21,6 +21,12 @@ public class Alarma implements Serializable {
 	@Column(name="idSensor",insertable = false, updatable = false)
 	private int idSensor;
 
+	public Alarma(int idSensor, java.util.Date fecha) {
+//		super();
+		this.id = new AlarmaPK(idSensor, fecha);
+		this.idSensor = idSensor;
+	}
+
 	public int getIdSensor() {
 		return idSensor;
 	}

@@ -19,6 +19,13 @@ public class AlarmaPK implements Serializable {
 
 	public AlarmaPK() {
 	}
+	
+	public AlarmaPK(int idSensor, java.util.Date fecha) {
+		super();
+		this.idSensor = idSensor;
+		this.fecha = fecha;
+	}
+
 	public int getIdSensor() {
 		return this.idSensor;
 	}
