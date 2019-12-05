@@ -13,14 +13,18 @@ public class LoginController {
 
 	@Autowired
 	ServicePersonas sPersonas;
-	@PostMapping(value = "/login")
+	@PostMapping(value = "/toLogin")
 	public String login(@RequestParam("user") String user, 
 						@RequestParam("pwd") String pwd,
 						HttpSession sesion){
 		Persona persona=sPersonas.getPersona(user, pwd);
 		if(persona!=null) {
 			sesion.setAttribute("persona", persona);
-			return "menu";
+			if(persona.getRol().equalsIgnoreCase("ROLE_ADMIN")) {
+				return "admin-menu";
+			}else {
+				return "cliente-menu";	
+			}
 		}else {
 			return "error";
 		}
