@@ -68,9 +68,9 @@ Seleccione el intervalo de fechas para crear el informe<br/><br/>
 		    <tr><td width="300px" align="center"><br/><b>Cliente</b><br/>&nbsp;</td><td width="300px" align="center"><br/><b>Sensor</b><br/>&nbsp;</td><td width="300px" align="center"><br/><b>Fecha de la alarma</b><br/>&nbsp;</td></tr>		    	
 	    	<c:forEach var="inf" items="${informe}">
 	    		<tr>
-	    			<td align="center"><br/>${inf.dni} - ${inf.usuario} - ${inf.nombre}<br/>&nbsp;</td>
-	    			<td align="center"><br/>${inf.idSensor} - ${inf.ubicacion}<br/>&nbsp;</td>
-					<td align="center"><br/><fmt:formatDate pattern="yyyy-MM-dd : HH:mm:ss" value="${inf.fecha}" /><br/>&nbsp;</td>
+	    			<td align="center"><br/>${inf[0]} - ${inf[1]} - ${inf[2]}<br/>&nbsp;</td>
+	    			<td align="center"><br/>${inf[3]} - ${inf[4]}<br/>&nbsp;</td>
+					<td align="center"><br/><fmt:formatDate pattern="yyyy-MM-dd : HH:mm:ss" value="${inf[5]}" /><br/>&nbsp;</td>
 				</tr>
 	    	</c:forEach>
 		</table>
