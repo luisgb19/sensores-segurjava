@@ -26,7 +26,7 @@
   </build>
     <properties>
   <!-- creo mi propia etiqueta para referir la version spring-version-->
-  	<spring-version>5.1.5.RELEASE</spring-version>
+  	<spring-version>5.3.18</spring-version>
   </properties>
  
   <dependencies>
